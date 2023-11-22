@@ -24,9 +24,9 @@ const ThirdScreen = () => {
                 name="toepassing"
                 className="text-[17px] shadow-md w-full border-[0.5px] outline-none focus:border-sky-500 focus:ring-sky-500 border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
               >
-                <option value="selecteer">Selecteer toepassing</option>
-                <option value="dummy1">Dummy 1</option>
-                <option value="dummy2">Dummy 2</option>
+                <option value="selecteer" className="text-[15px]">Selecteer toepassing</option>
+                <option value="dummy1" className="text-[15px]">Dummy 1</option>
+                <option value="dummy2" className="text-[15px]">Dummy 2</option>
               </select>
             </label>
           </div>
@@ -44,8 +44,8 @@ const ThirdScreen = () => {
               className="shadow-md text-[17px] w-full border-[0.5px] text-gray-600 outline-none focus:border-sky-500 focus:ring-sky-500 border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
             >
               <option value="geen">Geen vloerwarming</option>
-              <option value="dummy1">Dummy 1</option>
-              <option value="dummy2">Dummy 2</option>
+              <option value="dummy1" className="text-[15px]">Dummy 1</option>
+              <option value="dummy2" className="text-[15px]">Dummy 2</option>
             </select>
           </label>
         </div>

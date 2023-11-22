@@ -34,7 +34,7 @@ const FormModal = ({ open }: FormProps) => {
     <div className="w-[90%] md:w-[70%] max-w-[500px] h-[90vh] lg:h-[80vh] max-h-[700px] rounded-xl shadow-lg">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-between h-full w-full relative py-10 px-8 lg:px-10 overflow-y-auto overflow-x-hidden"
+        className="flex flex-col items-center justify-between h-full w-full relative py-10 px-8 lg:px-10"
       >
         {!isFirstStep && !isLastStep && (
           <button
