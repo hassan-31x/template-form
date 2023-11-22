@@ -59,7 +59,7 @@ const FirstScreen = () => {
             </label>
           </div>
         </div>
-        <div className="w-full flex">
+        <div className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-0">
           <div className="flex-1">
             <label className="flex flex-col gap-2">
               <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">

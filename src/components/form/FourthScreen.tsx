@@ -51,9 +51,9 @@ const FourthScreen = () => {
 
       <div className="flex flex-col items-center gap-4 w-full">
         <p className="text-xl text-[#5A5D64] font-medium tracking-tight">Direct contact?</p>
-        <div className="w-full flex justify-between gap-4">
-          <button className="w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 "><Phone size={15} /><span className="text-sky-400 font-semibold">020-3709151*</span></button>
-          <button className="w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 "><Mail size={15} /><span className="text-sky-400 font-semibold">info@betonvloeren.nl</span></button>
+        <div className="w-full flex justify-between gap-4 flex-col md:flex-row">
+          <button className="w-full md:w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 "><Phone size={15} /><span className="text-sky-400 font-semibold">020-3709151*</span></button>
+          <button className="w-full md:w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 "><Mail size={15} /><span className="text-sky-400 font-semibold">info@betonvloeren.nl</span></button>
         </div>
       </div>
     </div>

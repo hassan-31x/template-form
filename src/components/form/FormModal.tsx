@@ -31,10 +31,10 @@ const FormModal = ({ open }: FormProps) => {
   };
 
   return (
-    <div className="w-[90%] md:w-[70%] max-w-[500px] h-[90vh] lg:h-[80vh] max-h-[700px] rounded-xl shadow-lg">
+    <div className="w-[95%] md:w-[80%] max-w-[500px] lg:h-[80vh] lg:max-h-[800px] h-[800px] lg:min-h-[700px] my-5 rounded-xl shadow-lg">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-between h-full w-full relative py-10 px-8 lg:px-10"
+        className="flex flex-col items-center justify-between h-full w-full relative py-10 px-4 md:px-8 lg:px-10"
       >
         {!isFirstStep && !isLastStep && (
           <button
@@ -54,7 +54,7 @@ const FormModal = ({ open }: FormProps) => {
           </button>
         {step}
         {!isLastStep && <div className="w-full flex gap-5">
-          <button className="bg-blue-500 text-white w-full py-5 text-lg">
+          <button className="bg-blue-500 text-white w-full py-3 md:py-5 text-lg">
             Offerte aanvragen
           </button>
         </div>}
