@@ -31,10 +31,10 @@ const FormModal = ({ open }: FormProps) => {
   };
 
   return (
-    <div className="w-[95%] md:w-[80%] max-w-[500px] lg:h-[80vh] lg:max-h-[800px] h-[800px] lg:min-h-[700px] my-5 rounded-xl shadow-lg">
+    <div className="w-[95%] md:w-[80%] max-w-[500px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[650px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col items-center justify-between h-full w-full relative py-10 px-4 md:px-8 lg:px-10"
+        className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff]"
       >
         {!isFirstStep && !isLastStep && (
           <button
@@ -45,19 +45,26 @@ const FormModal = ({ open }: FormProps) => {
             <ArrowLeft size={37} strokeWidth={2.6} color="#A8A7A9" />
           </button>
         )}
-          <button
-            type="button"
-            className="absolute top-0 right-0 h-10 w-10 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
-            onClick={back}
-          >
-            <X size={30} strokeWidth={2.6} color="#7E7D80" onClick={() => goToStep(0)} />
-          </button>
+        <button
+          type="button"
+          className="absolute top-0 right-0 h-10 w-10 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
+          onClick={back}
+        >
+          <X
+            size={30}
+            strokeWidth={2.6}
+            color="#7E7D80"
+            onClick={() => goToStep(0)}
+          />
+        </button>
         {step}
-        {!isLastStep && <div className="w-full flex gap-5">
-          <button className="bg-blue-500 text-white w-full py-3 md:py-5 text-lg">
-            Offerte aanvragen
-          </button>
-        </div>}
+        {!isLastStep && (
+          <div className="w-full flex gap-5">
+            <button className="bg-[#0090ff] text-white w-full py-3 md:py-5 text-lg rounded-[4px]">
+              Offerte aanvragen
+            </button>
+          </div>
+        )}
       </form>
     </div>
   );

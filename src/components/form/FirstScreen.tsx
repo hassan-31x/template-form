@@ -8,12 +8,14 @@ import House from "@/assets/svg/House";
 const FirstScreen = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <h3 className="text-[#575A64] text-2xl font-extrabold text-center">
-        Welkom! Even voorstellen..
-      </h3>
-      <p className="text-sky-500 font-medium text-lg text-center mb-8">
-        Als eerst een paar basis gegevens
-      </p>
+      <div className="mb-8">
+        <h3 className="text-black text-2xl font-extrabold text-center">
+          Welkom! Even voorstellen..
+        </h3>
+        <p className="text-[#0090ff] font-medium text-lg text-center">
+          Als eerst een paar basis gegevens
+        </p>
+      </div>
       <div className="w-full flex flex-col gap-7">
         <div className="w-full flex justify-between">
           <div className="flex items-center space-x-2">
@@ -21,11 +23,11 @@ const FirstScreen = () => {
               <input
                 type="radio"
                 name="zeroStep"
-                className="accent-sky-600"
+                className="accent-[#0090ff]"
                 value="partiiculier"
               />
               <span className="flex flex-col gap-1 w-full items-center pt-2">
-                <House />
+                <img src="/pic 1.png" />
                 Particulier
               </span>
             </label>
@@ -35,11 +37,11 @@ const FirstScreen = () => {
               <input
                 type="radio"
                 name="zeroStep"
-                className="accent-sky-600"
+                className="accent-[#0090ff]"
                 value="zakelijk"
               />
               <span className="flex flex-col gap-1 w-full items-center pt-2">
-                <House />
+                <img src="/pic 2.png" />
                 Zakelijk
               </span>
             </label>
@@ -49,11 +51,11 @@ const FirstScreen = () => {
               <input
                 type="radio"
                 name="zeroStep"
-                className="accent-sky-600"
+                className="accent-[#0090ff]"
                 value="industrieel"
               />
               <span className="flex flex-col gap-1 w-full items-center pt-2">
-                <House />
+                <img src="/pic 3.png" />
                 Industrieel
               </span>
             </label>
@@ -64,14 +66,14 @@ const FirstScreen = () => {
             <label className="flex flex-col gap-2">
               <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
                 Gewenste uitvoerdatum{" "}
-                <span className="h-4 w-4 bg-gray-400 text-white rounded-full flex items-center justify-center text-xs">
+                <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                   𝒊
                 </span>
               </span>
               <input
                 type="text"
                 placeholder="Nana"
-                className="shadow-md w-full border-[0.5px] outline-none focus:border-sky-500 focus:ring-sky-500 border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
+                className="shadow-md w-full border-2 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] px-4 py-3 rounded-[6px]"
               />
             </label>
           </div>
@@ -106,14 +108,14 @@ const FirstScreen = () => {
           <label className="flex flex-col gap-2">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
               Email{" "}
-              <span className="h-4 w-4 bg-gray-400 text-white rounded-full flex items-center justify-center text-xs">
+              <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                 𝒊
               </span>
             </span>
             <input
               type="email"
               placeholder="Uw email adres"
-              className="shadow-md w-full border-[0.5px] outline-none focus:border-sky-500 focus:ring-sky-500 border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
+              className="shadow-md w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
             />
           </label>
         </div>
@@ -121,14 +123,14 @@ const FirstScreen = () => {
           <label className="flex flex-col gap-2">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
               Mobiel{" "}
-              <span className="h-4 w-4 bg-gray-400 text-white rounded-full flex items-center justify-center text-xs">
+              <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                 𝒊
               </span>
             </span>
             <input
               type="text"
               placeholder="Uw mobiel nummer"
-              className="shadow-md w-full border-[0.5px] outline-none focus:border-sky-500 focus:ring-sky-500 border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
+              className="shadow-md w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
             />
           </label>
         </div>
