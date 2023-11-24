@@ -8,15 +8,15 @@ import House from "@/assets/svg/House";
 const FirstScreen = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="mb-8">
+      <div className="mb-5">
         <h3 className="text-black text-2xl font-extrabold text-center">
-          Welkom! Even voorstellen..
+          Betonvloer offerteop maat?
         </h3>
         <p className="text-[#0090ff] font-medium text-lg text-center">
           Als eerst een paar basis gegevens
         </p>
       </div>
-      <div className="w-full flex flex-col gap-7">
+      <div className="w-full flex flex-col gap-5">
         <div className="w-full flex justify-between">
           <div className="flex items-center space-x-2">
             <label className="flex gap-1 text-xs text-gray-600 font-medium">
@@ -63,7 +63,7 @@ const FirstScreen = () => {
         </div>
         <div className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-0">
           <div className="flex-1">
-            <label className="flex flex-col gap-2">
+            <label className="flex flex-col gap-1">
               <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
                 Gewenste uitvoerdatum{" "}
                 <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
@@ -73,7 +73,7 @@ const FirstScreen = () => {
               <input
                 type="text"
                 placeholder="Nana"
-                className="shadow-md w-full border-2 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] px-4 py-3 rounded-[6px]"
+                className="shadow-md w-full border-2 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
               />
             </label>
           </div>
@@ -105,7 +105,7 @@ const FirstScreen = () => {
           </div>
         </div>
         <div>
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-1">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
               Email{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
@@ -115,12 +115,12 @@ const FirstScreen = () => {
             <input
               type="email"
               placeholder="Uw email adres"
-              className="shadow-md w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
+              className="shadow-md w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             />
           </label>
         </div>
         <div>
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-1">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
               Mobiel{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
@@ -130,9 +130,41 @@ const FirstScreen = () => {
             <input
               type="text"
               placeholder="Uw mobiel nummer"
-              className="shadow-md w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-gray-300 ring-gray-300 px-4 py-3 rounded-[6px]"
+              className="shadow-md w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             />
           </label>
+        </div>
+        <div className="flex gap-4">
+          <div>
+            <label className="flex flex-col gap-1">
+              <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
+                Postcode{" "}
+                <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
+                  𝒊
+                </span>
+              </span>
+              <input
+                type="text"
+                placeholder="Postcode"
+                className="shadow-md w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              />
+            </label>
+          </div>
+          <div>
+            <label className="flex flex-col gap-1">
+              <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-2">
+                Hlasnummer{" "}
+                <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
+                  𝒊
+                </span>
+              </span>
+              <input
+                type="text"
+                placeholder="Halsnummer"
+                className="shadow-md w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              />
+            </label>
+          </div>
         </div>
       </div>
     </div>

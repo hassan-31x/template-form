@@ -15,7 +15,7 @@ const FourthScreen = () => {
             Aanvrag gelukt
           </h2>
           <p className=" font-semibold text-black text-lg text-start">
-            Aangenaam!
+            Bedankt vooor je aanvraag!
           </p>
         </div>
       </div>

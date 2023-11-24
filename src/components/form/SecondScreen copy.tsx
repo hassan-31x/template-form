@@ -9,8 +9,9 @@ const SecondScreen = () => {
           Porject informatie
         </h3>
         <p className=" font-semibold text-black text-lg text-center">
-          <span className="text-[#0090ff] font-medium">Vertel ons meer</span>{" "}
-          over je project!
+          Vraag
+          <span className="text-[#0090ff] font-medium">vrigblijvend</span>
+          een offerte aan
         </p>
       </div>
       <div className="w-full flex flex-col gap-7">

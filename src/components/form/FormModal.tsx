@@ -27,11 +27,15 @@ const FormModal = ({ open }: FormProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (isLastStep) {
+      goToStep(0);
+    }
     next();
   };
 
   return (
-    <div className="w-[95%] md:w-[80%] max-w-[500px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[650px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
+    <div className="w-[95%] md:w-[80%] max-w-[500px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff]"
@@ -53,18 +57,20 @@ const FormModal = ({ open }: FormProps) => {
           <X
             size={30}
             strokeWidth={2.6}
-            color="#7E7D80"
+            color="#65c759"
             onClick={() => goToStep(0)}
           />
         </button>
         {step}
-        {!isLastStep && (
-          <div className="w-full flex gap-5">
-            <button className="bg-[#0090ff] text-white w-full py-3 md:py-5 text-lg rounded-[4px]">
-              Offerte aanvragen
-            </button>
-          </div>
-        )}
+        <div className="w-full flex gap-5">
+          <button
+            className={`${
+              isLastStep ? "bg-[#65c759]" : "bg-[#0090ff]"
+            } text-white w-full py-3 md:py-4 text-lg rounded-[4px]`}
+          >
+            {isLastStep ? "Aanvraag gelukt" : "Offerte aanvragen"}
+          </button>
+        </div>
       </form>
     </div>
   );
