@@ -9,7 +9,7 @@ const ThirdScreen = () => {
         </h3>
         <p className=" font-semibold text-black text-lg text-center">
           Vraag
-          <span className="text-[#0090ff] font-medium">vrijblijend</span>
+          <span className="text-[#0090ff] font-medium"> vrijblijend </span>
           een offerte aan
         </p>
       </div>
@@ -50,7 +50,7 @@ const ThirdScreen = () => {
             </span>
             <select
               name="vloerverwarming"
-              className="shadow-md text-[17px] w-full border-[0.5px] text-gray-600 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              className="shadow-md text-[17px] w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               <option value="geen">Geen vloerwarming</option>
               <option value="dummy1" className="text-[15px]">
@@ -72,7 +72,7 @@ const ThirdScreen = () => {
               name="story"
               rows={5}
               cols={33}
-              className="resize-none shadow-md w-full border-[0.5px] text-gray-600 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-3 py-2 rounded-[6px]"
+              className="resize-none shadow-md w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-3 py-2 rounded-[6px]"
             ></textarea>
           </label>
         </div>

@@ -55,7 +55,7 @@ const SecondScreen = () => {
               </span>
               <select
                 name="gewenste"
-                className="shadow-md text-[17px] w-full border-[0.5px] text-gray-600 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+                className="shadow-md text-[17px] w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
               >
                 <option value="manden" className="text-[15px]">
                   0 tot 3 manden
@@ -95,7 +95,7 @@ const SecondScreen = () => {
             </span>
             <select
               name="type"
-              className="shadow-md text-[17px] w-full border-[0.5px] text-gray-600 outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              className="shadow-md text-[17px] w-full border-[0.5px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               <option value="selecteer" className="text-[15px]">
                 Selecteer onderground
