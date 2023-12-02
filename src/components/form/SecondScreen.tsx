@@ -1,15 +1,18 @@
 import House from "@/assets/svg/House";
 
 import React, { ChangeEvent } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 
 interface SecondScreenProps {
   inputs: Inputs;
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
+  register: UseFormRegister<FieldValues>
 }
 
-const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
+const SecondScreen = ({ inputs, handleInputChange, register }: SecondScreenProps) => {
   const types = [
     "--Selecteer onderground--",
     "Beton Vloer",
@@ -44,11 +47,9 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
             <label className="flex text-xs text-gray-600 font-medium gap-[5px] items-start">
               <input
                 type="radio"
-                name="buildingType"
+                {...register("buildingType")}
                 className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                 value="bestaand"
-                checked={inputs.buildingType === "bestaand"}
-                onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
                 <img src="/pic 4.png" className="w-9" />
@@ -60,11 +61,9 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
             <label className="flex text-xs text-gray-600 font-medium gap-[4px] items-start">
               <input
                 type="radio"
-                name="buildingType"
+                {...register("buildingType")}
                 className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                 value="nieuwbouw"
-                checked={inputs.buildingType === "nieuwbouw"}
-                onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
                 <img src="/pic 5.png" className="w-9" />
@@ -82,9 +81,7 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
               </span>
             </span>
             <select
-              name="gewenste"
-              value={inputs.gewenste}
-              onChange={handleInputChange}
+              {...register("gewenste")}
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               <option value="0 tot 3 manden" className="text-[15px]">
@@ -116,9 +113,7 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
             <input
               type="text"
               placeholder="Oppervlakte m2"
-              name="oppervlakte"
-              value={inputs.oppervlakte}
-              onChange={handleInputChange}
+              {...register("oppervlakte")}
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             />
           </label>
@@ -132,9 +127,7 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
               </span>
             </span>
             <select
-              name="type"
-              value={inputs.type}
-              onChange={handleInputChange}
+              {...register("type")}
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               {types.map((type, index) => (

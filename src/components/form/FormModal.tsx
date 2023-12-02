@@ -12,9 +12,9 @@ import { ArrowLeft, X } from "lucide-react";
 
 // Change this to 'import { useSearchParams } from "react-router-dom" if working in react'
 import { useSearchParams } from "next/navigation";
-import { set } from "react-hook-form";
 import OpenButton from "./OpenButton";
 import { client } from "@/app/utils/client";
+import { useForm } from "react-hook-form";
 type FormProps = {};
 
 const FormModal = ({}: FormProps) => {
@@ -38,6 +38,8 @@ const FormModal = ({}: FormProps) => {
     vloerverwarming: "geen",
     story: "",
   });
+
+  const { register, handleSubmit } = useForm()
 
   const handleInputChange = (event: { target: { name: any; value: any } }) => {
     const { name, value } = event.target;
@@ -86,12 +88,11 @@ const FormModal = ({}: FormProps) => {
       <OpenButton setOpen={setOpen} />
     );
 
-  const { step, goToStep, isFirstStep, isLastStep, back, next, isThirdStep } =
-    useMultiStepForm(
+  const { step, goToStep, isFirstStep, isLastStep, back, next, isThirdStep } = useMultiStepForm(
       [
-        <FirstScreen inputs={inputs} handleInputChange={handleInputChange} />,
-        <SecondScreen inputs={inputs} handleInputChange={handleInputChange} />,
-        <ThirdScreen inputs={inputs} handleInputChange={handleInputChange} />,
+        <FirstScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
+        <SecondScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
+        <ThirdScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
         <FourthScreen />,
       ],
       currentStepIndex,
@@ -154,9 +155,8 @@ const FormModal = ({}: FormProps) => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const onSubmit = async (data: any) => {
+    console.log("🚀 ~ file: FormModal.tsx:159 ~ onSubmit ~ data:", data)
     if (isLastStep) {
       setOpen(false);
       return;
@@ -175,7 +175,7 @@ const FormModal = ({}: FormProps) => {
   return (
     <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
       >
         {!isFirstStep && !isLastStep && (

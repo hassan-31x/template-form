@@ -1,12 +1,14 @@
 import React from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 
 interface FirstScreenProps {
   inputs: Inputs
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  register: UseFormRegister<FieldValues>
 }
 
-const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
+const FirstScreen = ({inputs, handleInputChange, register} : FirstScreenProps) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className="mb-5">
@@ -25,11 +27,9 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
             <label className="flex text-xs text-gray-600 font-medium gap-[4px] items-start">
               <input
                 type="radio"
-                name="useCase"
+                {...register("useCase")}
                 className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                 value="particulier"
-                checked={inputs.useCase === "particulier"}
-                onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
                 <img src="/pic 1.png" className="w-9" />
@@ -41,11 +41,9 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
             <label className="flex text-xs text-gray-600 font-medium gap-[4px] items-start">
               <input
                 type="radio"
-                name="useCase"
+                {...register("useCase")}
                 className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                 value="zakelijk"
-                checked={inputs.useCase === "zakelijk"}
-                onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
                 <img src="/pic 2.png" className="w-9" />
@@ -57,11 +55,9 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
             <label className="flex text-xs text-gray-600 font-medium gap-[4px] items-start">
               <input
                 type="radio"
-                name="useCase"
+                {...register("useCase")}
                 className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                 value="industrieel"
-                checked={inputs.useCase === "industrieel"}
-                onChange={handleInputChange}
               />
               <span className="flex flex-col gap-1 w-full items-center pt-2">
                 <img src="/pic 3.png" className="w-9"  />
@@ -81,9 +77,7 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
               </span>
               <input
                 type="text"
-                name="naam"
-                value={inputs.naam}
-                onChange={handleInputChange}
+                {...register("naam")}
                 placeholder="Uw naam"
                 className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
               />
@@ -95,11 +89,9 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
                 <label className="flex gap-2 text-sm items-end">
                   <input
                     type="radio"
-                    name="gender"
+                    {...register("gender")}
                     className="accent-[#0090ff] h-5 w-5 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                     value="dhr"
-                    checked={inputs.gender === "dhr"}
-                    onChange={handleInputChange}
                   />
                   Dhr.
                 </label>
@@ -108,11 +100,9 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
                 <label className="flex gap-2 text-sm items-end">
                   <input
                     type="radio"
-                    name="gender"
+                    {...register("gender")}
                     className="accent-[#0090ff] h-5 w-5 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
                     value="mvr"
-                    checked={inputs.gender === "mvr"}
-                    onChange={handleInputChange}
                   />
                   Mevr.
                 </label>
@@ -132,9 +122,7 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
               type="email"
               placeholder="Uw email adres"
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-              name="email"
-              value={inputs.email}
-              onChange={handleInputChange}
+              {...register("email")}
             />
           </label>
         </div>
@@ -150,9 +138,7 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
               type="text"
               placeholder="06"
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-              name="mobiel"
-              value={inputs.mobiel}
-              onChange={handleInputChange}
+              {...register("mobiel")}
             />
           </label>
         </div>
@@ -169,9 +155,7 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
                 type="text"
                 placeholder="Postcode"
                 className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-                name="postcode"
-                value={inputs.postcode}
-                onChange={handleInputChange}
+                {...register("postcode")}
               />
             </label>
           </div>
@@ -187,9 +171,7 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
                 type="text"
                 placeholder="Hulsnummer"
                 className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-                name="hlasnummer"
-                value={inputs.hlasnummer}
-                onChange={handleInputChange}
+                {...register("hlasnummer")}
               />
             </label>
           </div>

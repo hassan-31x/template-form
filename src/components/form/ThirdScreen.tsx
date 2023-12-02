@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import { FieldValues, UseFormRegister } from "react-hook-form";
 
 interface ThirdScreenProps {
   inputs: {
@@ -9,9 +10,10 @@ interface ThirdScreenProps {
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => void;
+  register: UseFormRegister<FieldValues>
 }
 
-const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
+const ThirdScreen = ({ inputs, handleInputChange, register }: ThirdScreenProps) => {
   const options = [
     "Selecteer toepassing",
     "Bakkerij",
@@ -67,9 +69,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
                 </span>
               </span>
               <select
-                name="toepassing"
-                value={inputs.toepassing}
-                onChange={handleInputChange}
+                {...register("toepassing")}
                 className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-5 py-3 rounded-[6px]"
               >
                 {options.map((option, index) => (
@@ -93,9 +93,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
               </span>
             </span>
             <select
-              name="vloerverwarming"
-              value={inputs.vloerverwarming}
-              onChange={handleInputChange}
+              {...register("vloerverwarming")}
               className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-5 py-3 rounded-[6px]"
             >
               <option value="geen">Geen vloerwarming</option>
@@ -115,9 +113,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
             </span>
 
             <textarea
-              name="story"
-              value={inputs.story}
-              onChange={handleInputChange}
+              {...register("story")}
               rows={5}
               cols={33}
               className="resize-none drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-5 py-3 rounded-[6px]"
