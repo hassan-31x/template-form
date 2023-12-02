@@ -38,8 +38,40 @@ const FormModal = ({}: FormProps) => {
     vloerverwarming: "geen",
     story: "",
   });
+  const [errors, setErrors] = useState({
+    useCase: "",
+    naam: "",
+    gender: "",
+    email: "",
+    mobiel: "",
+    postcode: "",
+    hlasnummer: "",
+    buildingType: "",
+    gewenste: "",
+    oppervlakte: "",
+    type: "",
+    toepassing: "",
+    vloerverwarming: "",
+    story: "",
+  })
 
   const handleInputChange = (event: { target: { name: any; value: any } }) => {
+    setErrors({
+      useCase: "",
+    naam: "",
+    gender: "",
+    email: "",
+    mobiel: "",
+    postcode: "",
+    hlasnummer: "",
+    buildingType: "",
+    gewenste: "",
+    oppervlakte: "",
+    type: "",
+    toepassing: "",
+    vloerverwarming: "",
+    story: "",
+    })
     const { name, value } = event.target;
     setInputs((prevInputs) => ({
       ...prevInputs,
@@ -89,9 +121,9 @@ const FormModal = ({}: FormProps) => {
   const { step, goToStep, isFirstStep, isLastStep, back, next, isThirdStep } =
     useMultiStepForm(
       [
-        <FirstScreen inputs={inputs} handleInputChange={handleInputChange} />,
-        <SecondScreen inputs={inputs} handleInputChange={handleInputChange} />,
-        <ThirdScreen inputs={inputs} handleInputChange={handleInputChange} />,
+        <FirstScreen inputs={inputs} handleInputChange={handleInputChange} errors={errors} />,
+        <SecondScreen inputs={inputs} handleInputChange={handleInputChange} errors={errors} />,
+        <ThirdScreen inputs={inputs} handleInputChange={handleInputChange} errors={errors} />,
         <FourthScreen />,
       ],
       currentStepIndex,
@@ -153,9 +185,62 @@ const FormModal = ({}: FormProps) => {
       // Handle error
     }
   };
+  console.log(errors)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (currentStepIndex === 0){
+      if (inputs.useCase === ""){
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          useCase: "Please select one of the options",
+        }));
+        return;
+      }
+      if (inputs.naam === ""){
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          naam: "Please enter your naam",
+        }));
+        return;
+      }
+      if (inputs.gender === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gender: "Please enter your gender",
+        }));
+        return;
+      }
+      if (inputs.mobiel === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gender: "Please enter your mobiel",
+        }));
+        return;
+      }
+      if (inputs.email === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gender: "Please enter your email",
+        }));
+        return;
+      }
+      if (inputs.postcode === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gender: "Please enter your postcode",
+        }));
+        return;
+      }
+      if (inputs.hlasnummer === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gender: "Please enter your hlasnummer",
+        }));
+        return;
+      }
+    }
 
     if (isLastStep) {
       setOpen(false);

@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorTooltip from "./ErrorTooltip";
 
 
 interface FirstScreenProps {
@@ -6,7 +7,7 @@ interface FirstScreenProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
+const FirstScreen = ({inputs, handleInputChange, errors} : FirstScreenProps) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className="mb-5">
@@ -79,14 +80,16 @@ const FirstScreen = ({inputs, handleInputChange} : FirstScreenProps) => {
                   𝒊
                 </span>
               </span>
+              <ErrorTooltip label={errors?.naam} open={errors?.naam !== ''}>
               <input
                 type="text"
                 name="naam"
                 value={inputs.naam}
                 onChange={handleInputChange}
                 placeholder="Uw naam"
-                className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-              />
+                className={`drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] ${errors?.naam !== '' ? 'border-[#fe7e7f] ring=[#fe7e7f]' : 'border-[#f6f6f7] ring-[#f6f6f7]'} text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
+                />
+                </ErrorTooltip>
             </label>
           </div>
           <div className="flex-[0.8]">
