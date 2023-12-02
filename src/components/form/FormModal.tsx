@@ -14,16 +14,54 @@ import { ArrowLeft, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import OpenButton from "./OpenButton";
 import { client } from "@/app/utils/client";
+
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 type FormProps = {};
 
 const FormModal = ({}: FormProps) => {
   const [open, setOpen] = useState(false);
   const searchParams = useSearchParams();
-  const [currentStepIndex, setCurrentStepIndex] = useState(1);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [cid, setCid] = useState("");
 
-  const { register, reset, handleSubmit } = useForm()
+  const schema = yup.object().shape({
+    useCase: yup.string().required("Use case is required"),
+    naam: yup.string().required("Naam is required"),
+    gender: yup.string().required("Gender is required"),
+    email: yup
+      .string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    mobiel: yup.string().required("Mobiel is required"),
+    postcode: yup.string().required("Postcode is required"),
+    hlasnummer: yup.string().required("Hlasnummer is required"),
+    buildingType: yup.string().required("Building type is required"),
+    gewenste: yup.string().required("Gewenste is required"),
+    oppervlakte: yup.string().required("Oppervlakte is required"),
+    type: yup.string().required("Type is required"),
+    toepassing: yup.string().required("Toepassing is required"),
+    vloerverwarming: yup.string().required("Vloerverwarming is required"),
+    story: yup.string().required("Story is required"),
+  });
+
+  const { register, reset, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const { step, isFirstStep, isLastStep, back, next, isThirdStep } =
+    useMultiStepForm(
+      [
+        <FirstScreen register={register} />,
+        <SecondScreen register={register} />,
+        <ThirdScreen register={register} />,
+        <FourthScreen />,
+      ],
+      currentStepIndex,
+      setCurrentStepIndex
+    );
 
   useEffect(() => {
     let newOpen = false;
@@ -37,24 +75,13 @@ const FormModal = ({}: FormProps) => {
   }, [searchParams]);
 
   useEffect(() => {
-    if (!open) reset()
+    if (!open) reset();
   }, [open]);
 
   if (!open)
     return (
       // This button is responsible for opening form, please change it accordig to your need
       <OpenButton setOpen={setOpen} />
-    );
-
-  const { step, goToStep, isFirstStep, isLastStep, back, next, isThirdStep } = useMultiStepForm(
-      [
-        <FirstScreen register={register} />,
-        <SecondScreen register={register} />,
-        <ThirdScreen register={register} />,
-        <FourthScreen />,
-      ],
-      currentStepIndex,
-      setCurrentStepIndex
     );
 
   const handleFormSubmit = async (data: Inputs) => {
@@ -78,6 +105,7 @@ const FormModal = ({}: FormProps) => {
       // Handle error if needed
     }
   };
+  console.log(errors)
 
   const storeContacts = async (data: Inputs) => {
     const { naam, email, mobiel, postcode, gender, hlasnummer } = data; // Assuming inputs is the state containing these values
@@ -113,8 +141,11 @@ const FormModal = ({}: FormProps) => {
     }
   };
 
+  console.log(errors)
+
   const onSubmit = async (data: Inputs) => {
-    console.log("🚀 ~ file: FormModal.tsx:159 ~ onSubmit ~ data:", data)
+    console.log("🚀 ~ file: FormModal.tsx:159 ~ onSubmit ~ data:", data);
+    console.log("🚀 ~ file: FormModal.tsx:159 ~ onSubmit ~ data:", errors);
     if (isLastStep) {
       setOpen(false);
       return;
@@ -130,10 +161,18 @@ const FormModal = ({}: FormProps) => {
     next();
   };
 
+  const handleNext = () => {
+    handleSubmit(onSubmit)
+    console.log('errors')
+    if (currentStepIndex === 0 && !errors.hasOwnProperty("useCase")) {
+
+    }
+  }
+
   return (
     <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        // onSubmit={}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
       >
         {!isFirstStep && !isLastStep && (
@@ -160,13 +199,13 @@ const FormModal = ({}: FormProps) => {
         {step}
         <div className="w-full flex">
           {!isLastStep && (
-            <button className="bg-[#0090ff] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
+            <button type="button" className="bg-[#0090ff] text-white w-full py-3 md:py-4 text-lg rounded-[5px]" onClick={handleNext}>
               Offerte aanvragen
             </button>
           )}
           {isLastStep && (
             <button className="bg-[#65c759] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
-              Aanvraag gelukt 
+              Aanvraag gelukt
             </button>
           )}
         </div>
