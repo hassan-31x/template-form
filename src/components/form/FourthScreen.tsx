@@ -6,7 +6,7 @@ const FourthScreen = () => {
     <div className="w-full h-full flex flex-col items-center justify-around px-3">
       <div className="w-full flex items-center">
         <Check
-          className="w-14 h-14 p-2 rounded-full bg-[#54C247] text-white"
+          className="w-14 h-14 p-2 rounded-full bg-[#65c759] text-white"
           size={8}
           strokeWidth={5}
         />

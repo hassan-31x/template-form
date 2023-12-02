@@ -1,10 +1,11 @@
+"use client"
 import { ReactElement, useState } from "react";
 
-export const useMultiStepForm = (steps: ReactElement[]) => {
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+export const useMultiStepForm = (steps: ReactElement[], currentStepIndex : number, setCurrentStepIndex : (num: any)=>void) => {
+
 
   const next = () => {
-    setCurrentStepIndex((prevCurrentStepIndex) => {
+    setCurrentStepIndex((prevCurrentStepIndex : any) => {
       if (prevCurrentStepIndex === steps?.length - 1)
         return prevCurrentStepIndex;
 
@@ -13,7 +14,7 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
   };
 
   const back = () => {
-    setCurrentStepIndex((prevCurrentStepIndex) => {
+    setCurrentStepIndex((prevCurrentStepIndex : any) => {
       if (prevCurrentStepIndex <= 0) return prevCurrentStepIndex;
 
       return prevCurrentStepIndex - 1;
@@ -30,6 +31,7 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
     steps,
     isFirstStep: currentStepIndex === 0,
     isLastStep: currentStepIndex === steps?.length - 1,
+    isThirdStep : currentStepIndex === steps?.length - 2,
 
     next,
     back,
