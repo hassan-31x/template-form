@@ -5,14 +5,10 @@ import { FieldValues, UseFormRegister } from "react-hook-form";
 
 
 interface SecondScreenProps {
-  inputs: Inputs;
-  handleInputChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
   register: UseFormRegister<FieldValues>
 }
 
-const SecondScreen = ({ inputs, handleInputChange, register }: SecondScreenProps) => {
+const SecondScreen = ({ register }: SecondScreenProps) => {
   const types = [
     "--Selecteer onderground--",
     "Beton Vloer",

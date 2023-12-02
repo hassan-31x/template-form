@@ -22,32 +22,8 @@ const FormModal = ({}: FormProps) => {
   const searchParams = useSearchParams();
   const [currentStepIndex, setCurrentStepIndex] = useState(1);
   const [cid, setCid] = useState("");
-  const [inputs, setInputs] = useState({
-    useCase: "",
-    naam: "",
-    gender: "",
-    email: "",
-    mobiel: "",
-    postcode: "",
-    hlasnummer: "",
-    buildingType: "",
-    gewenste: "manden",
-    oppervlakte: "",
-    type: "",
-    toepassing: "",
-    vloerverwarming: "geen",
-    story: "",
-  });
 
-  const { register, handleSubmit } = useForm()
-
-  const handleInputChange = (event: { target: { name: any; value: any } }) => {
-    const { name, value } = event.target;
-    setInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: value,
-    }));
-  };
+  const { register, reset, handleSubmit } = useForm()
 
   useEffect(() => {
     let newOpen = false;
@@ -61,25 +37,7 @@ const FormModal = ({}: FormProps) => {
   }, [searchParams]);
 
   useEffect(() => {
-    if (!open) {
-      setCurrentStepIndex(0);
-      setInputs({
-        useCase: "",
-        naam: "",
-        gender: "",
-        email: "",
-        mobiel: "",
-        postcode: "",
-        hlasnummer: "",
-        buildingType: "",
-        gewenste: "manden",
-        oppervlakte: "",
-        type: "",
-        toepassing: "",
-        vloerverwarming: "geen",
-        story: "",
-      });
-    }
+    if (!open) reset()
   }, [open]);
 
   if (!open)
@@ -90,20 +48,20 @@ const FormModal = ({}: FormProps) => {
 
   const { step, goToStep, isFirstStep, isLastStep, back, next, isThirdStep } = useMultiStepForm(
       [
-        <FirstScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
-        <SecondScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
-        <ThirdScreen inputs={inputs} handleInputChange={handleInputChange} register={register} />,
+        <FirstScreen register={register} />,
+        <SecondScreen register={register} />,
+        <ThirdScreen register={register} />,
         <FourthScreen />,
       ],
       currentStepIndex,
       setCurrentStepIndex
     );
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (data: Inputs) => {
     try {
       // Adding the cid field to the form data
       const formData = {
-        ...inputs,
+        ...data,
         cid: cid, // Replace 'your_cid_here' with your actual cid
       };
 
@@ -121,8 +79,8 @@ const FormModal = ({}: FormProps) => {
     }
   };
 
-  const storeContacts = async () => {
-    const { naam, email, mobiel, postcode, gender, hlasnummer } = inputs; // Assuming inputs is the state containing these values
+  const storeContacts = async (data: Inputs) => {
+    const { naam, email, mobiel, postcode, gender, hlasnummer } = data; // Assuming inputs is the state containing these values
 
     const requestData = {
       name: naam,
@@ -155,7 +113,7 @@ const FormModal = ({}: FormProps) => {
     }
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: Inputs) => {
     console.log("🚀 ~ file: FormModal.tsx:159 ~ onSubmit ~ data:", data)
     if (isLastStep) {
       setOpen(false);
@@ -163,11 +121,11 @@ const FormModal = ({}: FormProps) => {
     }
 
     // if (isFirstStep) {
-    //   await storeContacts();
+    //   await storeContacts(data);
     // }
 
     if (isThirdStep) {
-      await handleFormSubmit();
+      await handleFormSubmit(data);
     }
     next();
   };

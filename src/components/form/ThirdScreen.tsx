@@ -2,18 +2,10 @@ import React, { ChangeEvent } from "react";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 
 interface ThirdScreenProps {
-  inputs: {
-    toepassing: string;
-    vloerverwarming: string;
-    story: string;
-  };
-  handleInputChange: (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => void;
   register: UseFormRegister<FieldValues>
 }
 
-const ThirdScreen = ({ inputs, handleInputChange, register }: ThirdScreenProps) => {
+const ThirdScreen = ({ register }: ThirdScreenProps) => {
   const options = [
     "Selecteer toepassing",
     "Bakkerij",

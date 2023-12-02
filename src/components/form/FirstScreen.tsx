@@ -3,12 +3,10 @@ import { FieldValues, UseFormRegister } from "react-hook-form";
 
 
 interface FirstScreenProps {
-  inputs: Inputs
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   register: UseFormRegister<FieldValues>
 }
 
-const FirstScreen = ({inputs, handleInputChange, register} : FirstScreenProps) => {
+const FirstScreen = ({ register} : FirstScreenProps) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className="mb-5">
