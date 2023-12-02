@@ -208,7 +208,7 @@ const FormModal = ({}: FormProps) => {
           )}
           {isLastStep && (
             <button className="bg-[#65c759] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
-              Aanvraag gelukt
+              Aanvraag gelukt 
             </button>
           )}
         </div>
