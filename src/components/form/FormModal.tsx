@@ -173,8 +173,7 @@ const FormModal = ({}: FormProps) => {
   };
 
   return (
-    // <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
-    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-black text-white">
+    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
