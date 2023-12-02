@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import ErrorTooltip from "./ErrorTooltip";
 
 interface ThirdScreenProps {
   inputs: {
@@ -9,9 +10,10 @@ interface ThirdScreenProps {
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => void;
+  errors: Inputs
 }
 
-const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
+const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) => {
   const options = [
     "Selecteer toepassing",
     "Bakkerij",
@@ -66,6 +68,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
                   𝒊
                 </span>
               </span>
+              <ErrorTooltip label={errors?.toepassing} open={errors?.toepassing !== ''}>
               <select
                 name="toepassing"
                 value={inputs.toepassing}
@@ -81,6 +84,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
                   </option>
                 ))}
               </select>
+              </ErrorTooltip>
             </label>
           </div>
         </div>
@@ -92,6 +96,8 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
                 𝒊
               </span>
             </span>
+            <ErrorTooltip label={errors?.vloerverwarming} open={errors?.vloerverwarming !== ''}>
+
             <select
               name="vloerverwarming"
               value={inputs.vloerverwarming}
@@ -106,6 +112,7 @@ const ThirdScreen = ({ inputs, handleInputChange }: ThirdScreenProps) => {
                 Nee
               </option>
             </select>
+              </ErrorTooltip>
           </label>
         </div>
         <div>

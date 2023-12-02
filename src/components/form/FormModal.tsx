@@ -212,31 +212,79 @@ const FormModal = ({}: FormProps) => {
         }));
         return;
       }
-      if (inputs.mobiel === "") {
-        setErrors((prevErrors) => ({
-          ...prevErrors,
-          gender: "Please enter your mobiel",
-        }));
-        return;
-      }
       if (inputs.email === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          gender: "Please enter your email",
+          email: "Please enter your email",
+        }));
+        return;
+      }
+      if (inputs.mobiel === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          mobiel: "Please enter your mobiel",
         }));
         return;
       }
       if (inputs.postcode === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          gender: "Please enter your postcode",
+          postcode: "Please enter your postcode",
         }));
         return;
       }
       if (inputs.hlasnummer === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          gender: "Please enter your hlasnummer",
+          hlasnummer: "Please enter your hlasnummer",
+        }));
+        return;
+      }
+    }
+
+    if (currentStepIndex === 1) {
+      if (inputs.buildingType === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          buildingType: "Please select one of the options",
+        }));
+        return;
+      }
+      if (inputs.gewenste === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          gewenste: "Please select one of the options",
+        }));
+        return;
+      }
+      if (inputs.oppervlakte === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          oppervlakte: "Please enter your oppervlakte",
+        }));
+        return;
+      }
+      if (inputs.type === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          type: "Please select one of the options",
+        }));
+        return;
+      }
+    }
+
+    if (currentStepIndex === 2) {
+      if (inputs.toepassing === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          toepassing: "Please select one of the options",
+        }));
+        return;
+      }
+      if (inputs.vloerverwarming === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          vloerverwarming: "Please select one of the options",
         }));
         return;
       }
@@ -247,9 +295,9 @@ const FormModal = ({}: FormProps) => {
       return;
     }
 
-    // if (isFirstStep) {
-    //   await storeContacts();
-    // }
+    if (isFirstStep) {
+      await storeContacts();
+    }
 
     if (isThirdStep) {
       await handleFormSubmit();

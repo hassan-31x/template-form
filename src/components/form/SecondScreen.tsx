@@ -1,15 +1,17 @@
 import House from "@/assets/svg/House";
 
 import React, { ChangeEvent } from "react";
+import ErrorTooltip from "./ErrorTooltip";
 
 interface SecondScreenProps {
   inputs: Inputs;
   handleInputChange: (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
+  errors: Inputs
 }
 
-const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
+const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) => {
   const types = [
     "--Selecteer onderground--",
     "Beton Vloer",
@@ -73,6 +75,9 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
             </label>
           </div>
         </div>
+        {errors.buildingType !== "" && (
+          <span className="text-[#fe7e7f] text-sm">{errors?.buildingType}</span>
+        )}
         <div className="w-full flex">
           <label className="flex w-full flex-col gap-1">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-3">
@@ -81,6 +86,8 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
                 𝒊
               </span>
             </span>
+            <ErrorTooltip label={errors?.gewenste} open={errors?.gewenste !== ''}>
+
             <select
               name="gewenste"
               value={inputs.gewenste}
@@ -103,6 +110,8 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
                 1 tot 2 jaar
               </option>
             </select>
+            </ErrorTooltip>
+
           </label>
         </div>
         <div>
@@ -113,14 +122,21 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
                 𝒊
               </span>
             </span>
+            <ErrorTooltip label={errors?.oppervlakte} open={errors?.oppervlakte !== ''}>
+
             <input
               type="text"
               placeholder="Oppervlakte m2"
               name="oppervlakte"
               value={inputs.oppervlakte}
               onChange={handleInputChange}
-              className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
-            />
+              className={`drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] ${
+                errors?.oppervlakte !== ""
+                  ? "border-[#fe7e7f] ring=[#fe7e7f]"
+                  : "border-[#f6f6f7] ring-[#f6f6f7]"
+                } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
+                />
+                </ErrorTooltip>
           </label>
         </div>
         <div>
@@ -131,6 +147,7 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
                 𝒊
               </span>
             </span>
+            <ErrorTooltip label={errors?.type} open={errors?.type !== ''}>
             <select
               name="type"
               value={inputs.type}
@@ -146,6 +163,7 @@ const SecondScreen = ({ inputs, handleInputChange }: SecondScreenProps) => {
                 </option>
               ))}
             </select>
+            </ErrorTooltip>
           </label>
         </div>
       </div>
