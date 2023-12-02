@@ -173,7 +173,8 @@ const FormModal = ({}: FormProps) => {
   };
 
   return (
-    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
+    // <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
+    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-black text-white">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
@@ -181,7 +182,7 @@ const FormModal = ({}: FormProps) => {
         {!isFirstStep && !isLastStep && (
           <button
             type="button"
-            className="absolute -top-[14px] -left-3 h-[4.25rem] w-[4.25rem] rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
+            className="absolute -top-[14px] -left-3 h-[4rem] w-[4rem] rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
             onClick={back}
           >
             <ArrowLeft size={37} strokeWidth={2.6} color="#A8A7A9" />
@@ -189,7 +190,7 @@ const FormModal = ({}: FormProps) => {
         )}
         <button
           type="button"
-          className="absolute top-0 right-0 h-8 w-8 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
+          className="absolute top-0 right-0 h-10 w-10 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
           onClick={back}
         >
           <X
