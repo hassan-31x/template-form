@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       GENDER: gender == 'dhr' ? 'Male' : 'Female',
       ZIPCODE: postcode,
       DOMAIN: baseUrl,
-      HOME_NUMBER : homeNumber,
+      HOME_NUMBER : homeNumber
       // SMS : '+923343911185'
     };
     createContact.listIds = [7];
