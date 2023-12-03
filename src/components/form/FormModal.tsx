@@ -19,6 +19,7 @@ type FormProps = {};
 
 const FormModal = ({}: FormProps) => {
   const [open, setOpen] = useState(false);
+  const [loading,setLoading] = useState(false)
   const searchParams = useSearchParams();
   const [currentStepIndex, setCurrentStepIndex] = useState(1);
   const [cid, setCid] = useState("");
@@ -296,11 +297,15 @@ const FormModal = ({}: FormProps) => {
     }
 
     if (isFirstStep) {
+      next()
       await storeContacts();
+      return
     }
 
     if (isThirdStep) {
+      setLoading(true)
       await handleFormSubmit();
+      setLoading(false)
     }
     next();
   };
@@ -341,7 +346,7 @@ const FormModal = ({}: FormProps) => {
           )}
           {isLastStep && (
             <button className="bg-[#65c759] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
-              Aanvraag gelukt 
+              {loading ? "Loading..." : "Aanvraag gelukt "}
             </button>
           )}
         </div>
