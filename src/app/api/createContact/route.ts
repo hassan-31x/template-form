@@ -28,7 +28,7 @@ export async function POST(request: Request) {
       ZIPCODE: postcode,
       DOMAIN: baseUrl,
       HOME_NUMBER : homeNumber,
-      SMS : mobile
+      // SMS : '+923343911185'
     };
     createContact.listIds = [7];
 
