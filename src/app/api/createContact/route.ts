@@ -24,10 +24,11 @@ export async function POST(request: Request) {
       FIRSTNAME: name,
       EMAIL: email,
       MOBILE: mobile,
-      GENDER: gender,
+      GENDER: gender == 'dhr' ? 'Male' : 'Female',
       ZIPCODE: postcode,
       DOMAIN: baseUrl,
-      HOME_NUMBER : homeNumber
+      HOME_NUMBER : homeNumber,
+      SMS : mobile
     };
     createContact.listIds = [7];
 
