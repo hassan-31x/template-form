@@ -92,7 +92,7 @@ const FormModal = ({}: FormProps) => {
 
   useEffect(() => {
     if (!open) {
-      setCurrentStepIndex(0);
+      setCurrentStepIndex(3);
       setInputs({
         useCase: "",
         naam: "",
@@ -310,7 +310,7 @@ const FormModal = ({}: FormProps) => {
   };
 
   return (
-    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[750px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
+    <div className="w-[95%] md:w-[80%] max-w-[450px] h-max my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
@@ -337,7 +337,7 @@ const FormModal = ({}: FormProps) => {
           />
         </button>
         {step}
-        <div className="w-full flex">
+        <div className="w-full flex mt-6">
           {!isLastStep && (
             <button className="bg-[#0090ff] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
               {loading ? 'Loading...' : 'Offerte aanvragen'}
