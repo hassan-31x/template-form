@@ -201,14 +201,14 @@ const FormModal = ({}: FormProps) => {
       if (inputs.naam === ""){
         setErrors((prevErrors) => ({
           ...prevErrors,
-          naam: "Please enter your naam",
+          naam: "Vul een geldig naam in",
         }));
         return;
       }
       if (inputs.gender === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          gender: "Please enter your gender",
+          gender: "Vul een geldig gender in",
         }));
         return;
       }
@@ -222,21 +222,21 @@ const FormModal = ({}: FormProps) => {
       if (inputs.mobiel === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          mobiel: "Please enter your mobiel",
+          mobiel: "Vul een geldig mobiel in",
         }));
         return;
       }
       if (inputs.postcode === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          postcode: "Please enter your postcode",
+          postcode: "Vul een geldig postcode in",
         }));
         return;
       }
       if (inputs.hlasnummer === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          hlasnummer: "Please enter your hlasnummer",
+          hlasnummer: "Vul een geldig hlasnummer in",
         }));
         return;
       }
@@ -260,7 +260,7 @@ const FormModal = ({}: FormProps) => {
       if (inputs.oppervlakte === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          oppervlakte: "Please enter your oppervlakte",
+          oppervlakte: "Vul een geldig oppervlakte in",
         }));
         return;
       }
@@ -310,7 +310,7 @@ const FormModal = ({}: FormProps) => {
   };
 
   return (
-    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[800px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
+    <div className="w-[95%] md:w-[80%] max-w-[450px] lg:h-[70vh] lg:max-h-[800px] h-[750px] lg:min-h-[680px] my-5 rounded-xl shadow-lg bg-[#fdfdff]">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col items-center justify-between h-full w-full relative p-8 bg-[#fdfdff] rounded-xl"
