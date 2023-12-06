@@ -29,4 +29,29 @@ input[type="radio"]:checked {
   border-color:green;
 } */
 
+.css-w1m7nc-MuiFormControl-root {
+    margin-left: 0px !important;
+}
 
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    margin-top: 6px;
+    box-shadow: none !important;
+    outline: 6px solid #f6f6f7 !important;
+}
+
+.MuiOutlinedInput-root {
+    border-radius: 6px !important;
+    font-size: 15px !important;
+}
+.MuiMenuItem-gutters {
+    padding-left: 25px !important;
+}
+
+#mui-component-select-gewenste:hover {
+    border-color: transparent !important;
+
+}
+
+#mui-component-select-gewenste:focus {
+    border: 2px solid #98d1ff !important;
+}

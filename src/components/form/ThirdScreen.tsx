@@ -1,5 +1,8 @@
 import React, { ChangeEvent } from "react";
 import ErrorTooltip from "./ErrorTooltip";
+import { FormControl } from "@mui/material";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 interface ThirdScreenProps {
   inputs: {
@@ -46,6 +49,24 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
     "Ziekenhuis",
   ];
 
+  const styles = {
+    focusBorder: {
+      borderWidth: "2px",
+      outline: "6px solid #f6f6f7",
+      "&:focus": {
+        borderColor: "#98d1ff",
+      },
+    },
+    placeholderColor: {
+      "&::placeholder": {
+        color: "#dadbdf",
+      },
+    },
+    rounded6: {
+      borderRadius: "6px",
+    },
+  };
+
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className=" mb-10">
@@ -68,7 +89,7 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
                 </span>
               </span>
               <ErrorTooltip label={errors?.toepassing} open={errors?.toepassing !== ''}>
-              <select
+              {/* <select
                 name="toepassing"
                 value={inputs.toepassing}
                 onChange={handleInputChange}
@@ -82,7 +103,29 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
                     {option}
                   </option>
                 ))}
-              </select>
+              </select> */}
+              <FormControl
+                sx={{
+                  m: 1,
+                  minWidth: 120,
+                  width: '100%',
+                  ...styles.focusBorder,
+                  ...styles.placeholderColor,
+                  ...styles.rounded6,
+                }}
+              >
+                <Select
+                  name="toepassing"
+                  value={inputs.toepassing}
+                  onChange={handleInputChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  {options.map((option, index) => (
+                  <MenuItem value={option.toLowerCase().replace(/\s/g, "-")}>{option}</MenuItem>
+                ))}
+                </Select>
+              </FormControl>
               </ErrorTooltip>
             </label>
           </div>
@@ -97,7 +140,7 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
             </span>
             <ErrorTooltip label={errors?.vloerverwarming} open={errors?.vloerverwarming !== ''}>
 
-            <select
+            {/* <select
               name="vloerverwarming"
               value={inputs.vloerverwarming}
               onChange={handleInputChange}
@@ -110,7 +153,29 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
               <option value="nee" className="text-[15px]">
                 Nee
               </option>
-            </select>
+            </select> */}
+            <FormControl
+                sx={{
+                  m: 1,
+                  minWidth: 120,
+                  width: '100%',
+                  ...styles.focusBorder,
+                  ...styles.placeholderColor,
+                  ...styles.rounded6,
+                }}
+              >
+                <Select
+                  name="vloerverwarming"
+                  value={inputs.vloerverwarming}
+                  onChange={handleInputChange}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                >
+                  <MenuItem value="geen">Geen vloerwarming</MenuItem>
+                  <MenuItem value="ja">Ja</MenuItem>
+                  <MenuItem value="nee">Nee</MenuItem>
+                </Select>
+              </FormControl>
               </ErrorTooltip>
           </label>
         </div>

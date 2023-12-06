@@ -20,7 +20,7 @@ const FormModal = ({}: FormProps) => {
   const [open, setOpen] = useState(false);
   const [loading,setLoading] = useState(false)
   const searchParams = useSearchParams();
-  const [currentStepIndex, setCurrentStepIndex] = useState(1);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [cid, setCid] = useState("");
   const [inputs, setInputs] = useState({
     useCase: "",
@@ -31,7 +31,7 @@ const FormModal = ({}: FormProps) => {
     postcode: "",
     hlasnummer: "",
     buildingType: "",
-    gewenste: "manden",
+    gewenste: "0 tot 3 manden",
     oppervlakte: "",
     type: "",
     toepassing: "",
@@ -102,7 +102,7 @@ const FormModal = ({}: FormProps) => {
         postcode: "",
         hlasnummer: "",
         buildingType: "",
-        gewenste: "manden",
+        gewenste: "0 tot 3 manden",
         oppervlakte: "",
         type: "",
         toepassing: "",
