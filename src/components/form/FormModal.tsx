@@ -12,7 +12,6 @@ import { ArrowLeft, X } from "lucide-react";
 
 // Change this to 'import { useSearchParams } from "react-router-dom" if working in react'
 import { useSearchParams } from "next/navigation";
-import { set } from "react-hook-form";
 import OpenButton from "./OpenButton";
 import { client } from "@/app/utils/client";
 type FormProps = {};
@@ -216,7 +215,7 @@ const FormModal = ({}: FormProps) => {
       if (inputs.email === "") {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          email: "Please enter your email",
+          email: "Vul een geldig email adres in",
         }));
         return;
       }
@@ -341,12 +340,12 @@ const FormModal = ({}: FormProps) => {
         <div className="w-full flex">
           {!isLastStep && (
             <button className="bg-[#0090ff] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
-              Offerte aanvragen
+              {loading ? 'Loading...' : 'Offerte aanvragen'}
             </button>
           )}
           {isLastStep && (
             <button className="bg-[#65c759] text-white w-full py-3 md:py-4 text-lg rounded-[5px]">
-              {loading ? "Loading..." : "Aanvraag gelukt "}
+              Aanvraag gelukt
             </button>
           )}
         </div>
