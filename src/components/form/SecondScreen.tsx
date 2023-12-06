@@ -32,22 +32,22 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
   return (
     <div className="w-full h-full flex flex-col items-center">
       <div className=" mb-10">
-        <h3 className="text-black text-2xl font-extrabold text-center">
-          Porject informatie
+        <h3 className="text-black text-2xl font-extrabold text-center mb-[5px]">
+        Welcom Nana!
         </h3>
-        <p className="font-medium text-lg text-center">
+        <p className="font-medium text-lg text-center tracking-[0.015em]">
           <span className="text-[#0090ff] font-medium">Vertel ons meer</span>{" "}
           over je project!
         </p>
       </div>
       <div className="w-full flex flex-col gap-6">
-        <div className="w-full flex justify-start gap-16 ml-7 mb-3">
+        <div className="w-full flex justify-start gap-10 ml-2 mb-3">
           <div className="flex items-center space-x-2">
-            <label className="flex text-xs text-gray-600 font-medium gap-[5px] items-start">
+            <label className="flex text-xs text-gray-600 font-medium gap-[6px] items-start">
               <input
                 type="radio"
                 name="buildingType"
-                className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
+                className="accent-[#0090ff] h-8 w-8 my-2"
                 value="bestaand"
                 checked={inputs.buildingType === "bestaand"}
                 onChange={handleInputChange}
@@ -59,11 +59,11 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
             </label>
           </div>
           <div className="flex items-center space-x-2">
-            <label className="flex text-xs text-gray-600 font-medium gap-[4px] items-start">
+            <label className="flex text-xs text-gray-600 font-medium gap-[1px] items-start">
               <input
                 type="radio"
                 name="buildingType"
-                className="accent-[#0090ff] h-8 w-8 my-2 drop-shadow-[0_0_4px_rgba(79,79,79,0.4)]"
+                className="accent-[#0090ff] h-8 w-8 my-1"
                 value="nieuwbouw"
                 checked={inputs.buildingType === "nieuwbouw"}
                 onChange={handleInputChange}
@@ -80,7 +80,7 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
         )}
         <div className="w-full flex">
           <label className="flex w-full flex-col gap-1">
-            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-3">
+            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium">
               Gewenste uitvoerdatum{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                 𝒊
@@ -92,7 +92,7 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
               name="gewenste"
               value={inputs.gewenste}
               onChange={handleInputChange}
-              className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              className="w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               <option value="0 tot 3 manden" className="text-[15px]">
                 0 tot 3 manden
@@ -116,7 +116,7 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
         </div>
         <div>
           <label className="flex flex-col gap-1">
-            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-3">
+            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium">
               Oppervlakte m2{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                 𝒊
@@ -130,10 +130,10 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
               name="oppervlakte"
               value={inputs.oppervlakte}
               onChange={handleInputChange}
-              className={`drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] ${
+              className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                 errors?.oppervlakte !== ""
-                  ? "border-[#fe7e7f] ring=[#fe7e7f]"
-                  : "border-[#f6f6f7] ring-[#f6f6f7]"
+                  ? "border-[#fe7e7f]"
+                  : "border-[#d7edff] border-[1px]"
                 } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                 />
                 </ErrorTooltip>
@@ -141,7 +141,7 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
         </div>
         <div>
           <label className="flex flex-col gap-1">
-            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium pl-3">
+            <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium">
               Type onderground{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
                 𝒊
@@ -152,7 +152,7 @@ const SecondScreen = ({ inputs, handleInputChange, errors }: SecondScreenProps) 
               name="type"
               value={inputs.type}
               onChange={handleInputChange}
-              className="drop-shadow-[0_0_3px_rgba(200,200,200,1)] w-full border-[2px] outline-none focus:border-[#0090ff] focus:ring-[#0090ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
+              className="w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] border-[#f6f6f7] ring-[#f6f6f7] text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]"
             >
               {types.map((type, index) => (
                 <option

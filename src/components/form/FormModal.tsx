@@ -92,7 +92,7 @@ const FormModal = ({}: FormProps) => {
 
   useEffect(() => {
     if (!open) {
-      setCurrentStepIndex(0);
+      setCurrentStepIndex(3);
       setInputs({
         useCase: "",
         naam: "",
@@ -326,7 +326,7 @@ const FormModal = ({}: FormProps) => {
         )}
         <button
           type="button"
-          className="absolute top-0 right-0 h-10 w-10 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
+          className="absolute -top-2 -right-2 h-12 w-12 rounded-full shadow-xl flex items-center justify-center z-10 bg-white"
           onClick={back}
         >
           <X

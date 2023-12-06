@@ -3,7 +3,7 @@ import React from "react";
 
 const FourthScreen = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-around px-3">
+    <div className="w-full h-full flex flex-col items-center justify-around px-4">
       <div className="w-full flex items-center">
         <Check
           className="w-14 h-14 p-2 rounded-full bg-[#65c759] text-white"
@@ -15,7 +15,7 @@ const FourthScreen = () => {
             Aanvrag gelukt
           </h2>
           <p className=" font-semibold text-black text-lg text-start">
-            Bedankt vooor je aanvraag!
+            Aangenaam!
           </p>
         </div>
       </div>
@@ -63,12 +63,12 @@ const FourthScreen = () => {
         Direct contact?
       </p>
       <div className="flex flex-col items-center w-full">
-        <div className="w-full flex justify-between gap-4 flex-col md:flex-row">
-          <button className="w-full md:w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 ">
+        <div className="w-full flex justify-between gap-0 border-[0.25px] border-opacity-[0.25] border-[#dbdbdb] flex-col md:flex-row">
+          <button className="w-full md:w-1/2  py-5 flex gap-3 text-xs items-center px-4 ">
             <Phone size={15} />
             <span className="text-sky-400 font-semibold">020-3709151*</span>
           </button>
-          <button className="w-full md:w-1/2 border border-[#dbdbdb] py-3 shadow-sm flex gap-3 text-xs items-center px-4 ">
+          <button className="w-full md:w-1/2 py-5  flex gap-3 text-xs items-center px-4 ">
             <Mail size={15} />
             <span className="text-sky-400 font-semibold">
               info@betonvloeren.nl

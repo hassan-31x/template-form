@@ -27,7 +27,7 @@ const ErrorTooltip = ({label, children, side='top', align='center', open}: Error
                 {children}
             </TooltipTrigger>
             <TooltipContent side={side} align={align} className='text-[#fe7e7f] mb-1' >
-                <p className='text-sm'>{label?.toLowerCase()}</p>
+                <p className='text-sm normal-case'>{label?.toLowerCase()}</p>
             </TooltipContent>
         </Tooltip>
     </TooltipProvider>
