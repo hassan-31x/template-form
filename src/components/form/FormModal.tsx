@@ -92,7 +92,7 @@ const FormModal = ({}: FormProps) => {
 
   useEffect(() => {
     if (!open) {
-      setCurrentStepIndex(3);
+      setCurrentStepIndex(0);
       setInputs({
         useCase: "",
         naam: "",
