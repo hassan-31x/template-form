@@ -149,6 +149,7 @@ const SecondScreen = ({
                 <Select
                   name="gewenste"
                   value={inputs.gewenste}
+                  //@ts-ignore
                   onChange={handleInputChange}
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
@@ -227,6 +228,7 @@ const SecondScreen = ({
                 <Select
                   name="type"
                   value={inputs.type}
+                  //@ts-ignore
                   onChange={handleInputChange}
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}

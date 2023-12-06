@@ -117,6 +117,7 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
                 <Select
                   name="toepassing"
                   value={inputs.toepassing}
+                  //@ts-ignore
                   onChange={handleInputChange}
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
@@ -167,6 +168,7 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
                 <Select
                   name="vloerverwarming"
                   value={inputs.vloerverwarming}
+                  //@ts-ignore
                   onChange={handleInputChange}
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
