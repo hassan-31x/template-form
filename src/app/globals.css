@@ -47,11 +47,15 @@ input[type="radio"]:checked {
     padding-left: 25px !important;
 }
 
+.css-1exehb-MuiFormControl-root {
+    margin-left: 1px !important;
+}
+
 #mui-component-select-gewenste:hover {
     border-color: transparent !important;
 
 }
 
-#mui-component-select-gewenste:focus {
-    border: 2px solid #98d1ff !important;
-}
+/* #mui-component-select-gewenste:focus { */
+    /* border: 2px solid #98d1ff !important; */
+/* } */

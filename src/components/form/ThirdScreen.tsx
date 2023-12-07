@@ -193,7 +193,7 @@ const ThirdScreen = ({ inputs, handleInputChange, errors }: ThirdScreenProps) =>
               onChange={handleInputChange}
               rows={5}
               cols={33}
-              className="resize-none w-full focus:border-[2px] border-[#d7edff] border-[1px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] text-[#515766] placeholder-[#dadbdf] px-5 py-3 rounded-[6px]"
+              className="resize-none w-full focus:border-[2px] border-[#d7edff] border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] text-[#515766] placeholder-[#dadbdf] px-5 py-3 rounded-[6px]"
             ></textarea>
           </label>
         </div>

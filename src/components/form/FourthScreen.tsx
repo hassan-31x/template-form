@@ -3,7 +3,7 @@ import React from "react";
 
 const FourthScreen = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-around px-4">
+    <div className="w-full h-full flex flex-col gap-5 items-center justify-around px-4">
       <div className="w-full flex items-center">
         <Check
           className="w-14 h-14 p-2 rounded-full bg-[#65c759] text-white"
@@ -20,7 +20,7 @@ const FourthScreen = () => {
         </div>
       </div>
 
-      <div className="w-full flex flex-col gap-5">
+      <div className="w-full flex flex-col gap-4 mt-3">
         <div>
           <h3 className="text-lg font-bold text-[#5A5D64] leading-snug">
             Email bevestiging
@@ -59,21 +59,22 @@ const FourthScreen = () => {
         </div>
       </div>
 
-      <p className="text-xl text-[#5A5D64] font-medium tracking-tight">
+      
+      <div className="flex flex-col gap-2 items-center w-full">
+        <p className="text-xl text-[#5A5D64] font-medium tracking-tight">
         Direct contact?
       </p>
       <div className="flex flex-col items-center w-full">
-        <div className="w-full flex justify-between gap-0 border-[0.25px] border-opacity-[0.25] border-[#dbdbdb] flex-col md:flex-row">
-          <button className="w-full md:w-1/2  py-5 flex gap-3 text-xs items-center px-4 ">
+        <div className="w-full flex justify-between gap-0 border-[0.25px] border-opacity-[0.25] border-[#dbdbdb] flex-row">
+          <button className="w-1/2  py-5 flex gap-2 md:gap-3 text-xs items-center justify-center ">
             <Phone size={15} />
-            <span className="text-sky-400 font-semibold">020-3709151*</span>
+            <span className="text-[#0090ff] font-semibold">020-3709151*</span>
           </button>
-          <button className="w-full md:w-1/2 py-5  flex gap-3 text-xs items-center px-4 ">
+          <button className="w-1/2  py-5 flex gap-2 md:gap-3 text-xs items-center justiy-center">
             <Mail size={15} />
-            <span className="text-sky-400 font-semibold">
-              info@betonvloeren.nl
-            </span>
+            <span className="text-[#0090ff] font-semibold">info@betonvloeren.nl</span>
           </button>
+        </div>
         </div>
       </div>
     </div>

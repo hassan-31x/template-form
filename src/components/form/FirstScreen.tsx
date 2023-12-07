@@ -1,5 +1,6 @@
 import React from "react";
 import ErrorTooltip from "./ErrorTooltip";
+import Image from "next/image";
 
 interface FirstScreenProps {
   inputs: Inputs;
@@ -35,7 +36,7 @@ const FirstScreen = ({
                 onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
-                <img src="/pic 1.png" className="w-8" />
+                <Image src="/pic 1.png" height={32} width={32} alt="particulier" />
                 Particulier
               </span>
             </label>
@@ -51,7 +52,7 @@ const FirstScreen = ({
                 onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
-                <img src="/pic 2.png" className="w-8" />
+                <img src="/pic 2.png" height={32} width={32} alt="zakelijk" />
                 Zakelijk
               </span>
             </label>
@@ -67,7 +68,7 @@ const FirstScreen = ({
                 onChange={handleInputChange}
               />
               <span className="flex flex-col gap-1 w-full items-center pt-2">
-                <img src="/pic 3.png" className="w-8" />
+                <img src="/pic 3.png" height={32} width={32} alt="industrieel" />
                 Industrieel
               </span>
             </label>
@@ -95,7 +96,7 @@ const FirstScreen = ({
                   className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                     errors?.naam !== ""
                       ? "border-[#fe7e7f] border-[2px] "
-                      : "border-[#d7edff]  border-[1px]"
+                      : "border-[#d7edff]  border-[2px]"
                   } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                 />
               </ErrorTooltip>
@@ -150,7 +151,7 @@ const FirstScreen = ({
                 className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                   errors?.email !== ""
                     ? "border-[#fe7e7f] border-[2px]"
-                    : "border-[#d7edff] border-[1px]"
+                    : "border-[#d7edff] border-[2px]"
                 } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                 name="email"
                 value={inputs.email}
@@ -174,7 +175,7 @@ const FirstScreen = ({
                 className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                   errors?.mobiel !== ""
                     ? "border-[#fe7e7f] border-[2px]"
-                    : "border-[#d7edff] border-[1px]"
+                    : "border-[#d7edff] border-[2px]"
                 } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                 name="mobiel"
                 value={inputs.mobiel}
@@ -202,7 +203,7 @@ const FirstScreen = ({
                   className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                     errors?.postcode !== ""
                       ? "border-[#fe7e7f] border-[2px]"
-                      : "border-[#d7edff] border-[1px]"
+                      : "border-[#d7edff] border-[2px]"
                   } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                   name="postcode"
                   value={inputs.postcode}
@@ -229,7 +230,7 @@ const FirstScreen = ({
                   className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                     errors?.hlasnummer !== ""
                       ? "border-[#fe7e7f] border-[2px]"
-                      : "border-[#d7edff] border-[1px]"
+                      : "border-[#d7edff] border-[2px]"
                   } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
                   name="hlasnummer"
                   value={inputs.hlasnummer}

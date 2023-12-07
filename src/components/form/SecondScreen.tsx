@@ -3,6 +3,7 @@ import ErrorTooltip from "./ErrorTooltip";
 import { FormControl } from "@mui/material";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import Image from "next/image";
 
 interface SecondScreenProps {
   inputs: Inputs;
@@ -37,7 +38,7 @@ const SecondScreen = ({
   const styles = {
     focusBorder: {
       borderWidth: "2px",
-      outline: "6px solid #f6f6f7",
+      outline: "5px solid #f6f6f7",
       "&:focus": {
         borderColor: "#98d1ff",
       },
@@ -56,7 +57,7 @@ const SecondScreen = ({
     <div className="w-full h-full flex flex-col items-center">
       <div className=" mb-10">
         <h3 className="text-black text-2xl font-extrabold text-center mb-[5px]">
-          Welcom Nana!
+          Welcome Nana!
         </h3>
         <p className="font-medium text-lg text-center tracking-[0.015em]">
           <span className="text-[#0090ff] font-medium">Vertel ons meer</span>{" "}
@@ -76,7 +77,7 @@ const SecondScreen = ({
                 onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
-                <img src="/pic 4.png" className="w-9" />
+                <Image src="/pic 4.png" height={36} width={36} alt="bestaand" />
                 Bestaand
               </span>
             </label>
@@ -92,7 +93,7 @@ const SecondScreen = ({
                 onChange={handleInputChange}
               />
               <span className="flex flex-col gap-2 w-full items-center pt-2">
-                <img src="/pic 5.png" className="w-9" />
+                <Image src="/pic 5.png" height={36} width={36} alt="nieuwbouw" />
                 Nieuwbouw
               </span>
             </label>
@@ -140,7 +141,7 @@ const SecondScreen = ({
                 sx={{
                   m: 1,
                   minWidth: 120,
-                  width: '100%',
+                  width: "100%",
                   ...styles.focusBorder,
                   ...styles.placeholderColor,
                   ...styles.rounded6,
@@ -154,10 +155,10 @@ const SecondScreen = ({
                   displayEmpty
                   inputProps={{ "aria-label": "Without label" }}
                 >
-                  <MenuItem value="0 tot 3 manden">0 tot 3 manden</MenuItem>
-                  <MenuItem value="4 tot 6 manden">4 tot 6 manden</MenuItem>
-                  <MenuItem value="7 tot 9 manden">7 tot 9 manden</MenuItem>
-                  <MenuItem value="9 tot 12 manden">9 tot 12 manden</MenuItem>
+                  <MenuItem value="0 tot 3 manden">0 tot 3 Maanden</MenuItem>
+                  <MenuItem value="4 tot 6 manden">4 tot 6 Maanden</MenuItem>
+                  <MenuItem value="7 tot 9 manden">7 tot 9 Maanden</MenuItem>
+                  <MenuItem value="9 tot 12 manden">9 tot 12 Maanden</MenuItem>
                   <MenuItem value="1 tot 2 jaar">1 tot 2 jaar</MenuItem>
                 </Select>
               </FormControl>
@@ -185,14 +186,14 @@ const SecondScreen = ({
                 className={`w-full focus:border-[2px] outline outline-4 outline-[#f6f6f7] focus:border-[#98d1ff] ${
                   errors?.oppervlakte !== ""
                     ? "border-[#fe7e7f]"
-                    : "border-[#d7edff] border-[1px]"
+                    : "border-[#d7edff] border-[2px]"
                 } text-[#515766] placeholder-[#dadbdf] px-4 py-3 rounded-[6px]`}
               />
             </ErrorTooltip>
           </label>
         </div>
         <div>
-          <label className="flex flex-col gap-1">
+          <label className="flex flex-col gap-0">
             <span className="flex items-center gap-2 text-sm pb-1 text-gray-500 font-medium">
               Type onderground{" "}
               <span className="h-4 w-4 bg-[#ededef] text-white rounded-full flex items-center justify-center text-xs">
@@ -219,7 +220,7 @@ const SecondScreen = ({
                 sx={{
                   m: 1,
                   minWidth: 120,
-                  width: '100%',
+                  width: "100%",
                   ...styles.focusBorder,
                   ...styles.placeholderColor,
                   ...styles.rounded6,
@@ -234,8 +235,10 @@ const SecondScreen = ({
                   inputProps={{ "aria-label": "Without label" }}
                 >
                   {types.map((type, index) => (
-                  <MenuItem value={type.toLowerCase().replace(/\s/g, "-")}>{type}</MenuItem>
-                ))}
+                    <MenuItem value={type.toLowerCase().replace(/\s/g, "-")}>
+                      {type}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </ErrorTooltip>
